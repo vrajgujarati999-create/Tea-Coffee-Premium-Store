@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tea & Coffee Premium Store</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; color: #333; }
+
+  /* Header */
+  header {
+    background: #2c3e50; color: #fff; padding: 20px;
+    text-align: center; font-size: 26px; font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  }
+
+  /* Cart wrapper */
+  .cart-wrapper {
+    display: flex; flex-wrap: wrap; max-width: 1200px; margin: 30px auto; gap: 20px;
+  }
+
+  /* Cart item cards */
+  .cart-item {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex; flex: 1 1 500px; align-items: center; gap: 20px;
+    box-shadow: 8px 8px 20px #babecc, -8px -8px 20px #ffffff;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cart-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 12px 12px 25px #babecc, -12px -12px 25px #ffffff;
+  }
+
+  .cart-item img {
+    width: 120px; height: 120px; object-fit: cover; border-radius: 15px;
+    transition: transform 0.2s;
+  }
+  .cart-item img:hover { transform: scale(1.08); }
+
+  /* Item info */
+  .item-info { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+  .item-info h3 { font-size: 20px; color: #2c3e50; }
+  .item-info p { font-size: 16px; color: #555; }
+
+  /* Quantity buttons */
+  .quantity {
+  display: inline-flex;        /* horizontal layout */
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #ed6d12;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.quantity button:hover {
+  background: #388e3c;
+  transform: translateY(-2px);
+}
+
+.quantity button:active {
+  background: #2e7d32;
+  transform: translateY(1px);
+}
+
+.quantity span {
+  min-width: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  user-select: none;
+}
+
+/* Remove button */
+.remove-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.15s ease;
+  user-select: none;
+}
+
+.remove-btn:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+.remove-btn:active {
+  background: #922b21;
+  transform: translateY(1px);
+}
+    /* Summary panel */
+.summary {
+  flex: 1 1 300px;
+  background: #ffffff;           /* clean flat white */
+  border-radius: 20px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);  /* subtle shadow for depth */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.summary h2 {
+  font-size: 22px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0; /* subtle underline for heading */
+  padding-bottom: 10px;
+}
+
+.summary p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #34495e;
+  margin: 0;
+}
+
+/* Checkout button inside summary */
+.summary .checkout-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: #4caf50;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.15s ease;
+}
+
+.summary .checkout-btn:hover {
+  background: #388e3c;
+  transform: translateY(-2px);
+}
+
+.summary .checkout-btn:active {
+  background: #2e7d32;
+  transform: translateY(1px);
+}
+/* Checkout button 3D style */
+  .checkout-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(145deg, #ed6d12, #e88912);
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 15px;
+  font-size: 18px;
+  box-shadow: 0 8px 15px rgba(39, 174, 96, 0.4);
+  transition: all 0.25s ease;
+  user-select: none;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background: linear-gradient(145deg, #ed6d12, #ed6d12);
+  box-shadow: 0 12px 20px rgba(39, 174, 96, 0.6);
+  transform: translateY(-3px);
+}
+
+.checkout-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 5px 8px rgba(39, 174, 96, 0.3);
+}
+</style>
+</head>
+<body>
+
+<header>Tea & Coffee Premium Store</header>
+
+<div class="cart-wrapper" id="cart-wrapper">
+  <!-- Products dynamically added here -->
+</div>
+
+<div class="summary">
+  <h2>Order Summary</h2>
+  <p id="total-price">Total: ₹0</p>
+  <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
+</div>
+
+<script>
+function loadCart(){
+  const cartWrapper = document.getElementById('cart-wrapper');
+  const totalPriceEl = document.getElementById('total-price');
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cartWrapper.innerHTML = "";
+
+  if(cart.length === 0){
+    cartWrapper.innerHTML = "<p style='font-size:18px; text-align:center; width:100%; color:#555;'>Your cart is empty 😢</p>";
+    totalPriceEl.innerText = "Total: ₹0";
+    return;
+  }
+
+  let total = 0;
+  cart.forEach((item,index)=>{
+    total += item.price * item.quantity;
+
+    const div = document.createElement("div");
+    div.className = "cart-item";
+    div.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
+      <div class="item-info">
+        <h3>${item.name}</h3>
+        <p>Price: ₹${item.price}</p>
+        <div class="quantity">
+          <button onclick="changeQty(${index},-1)">-</button>
+          <span>${item.quantity}</span>
+          <button onclick="changeQty(${index},1)">+</button>
+        </div>
+      </div>
+      <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+    `;
+    cartWrapper.appendChild(div);
+  });
+
+  totalPriceEl.innerText = "Total: ₹" + total;
+}
+
+function changeQty(index,delta){
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  cart[index].quantity += delta;
+  if(cart[index].quantity < 1) cart[index].quantity = 1;
+  localStorage.setItem("cart", JSON.stringify(cart));
+  loadCart();
+}
+
+function removeItem(index){
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  cart.splice(index,1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  loadCart();
+}
+
+loadCart();
+</script>
+
+</body>
+</html>

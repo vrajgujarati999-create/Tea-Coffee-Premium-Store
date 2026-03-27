@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f9;
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #ddd;
+      padding: 10px;
+      margin: 5px 0;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: #34495e;
+      color: white;
+    }
+
+    /* Content */
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    /* Card */
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    table th {
+      background: #3498db;
+      color: white;
+      padding: 10px;
+    }
+
+    table td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    table tr:hover {
+      background: #f1f1f1;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .view-btn {
+      background: #2ecc71;
+    }
+
+    .view-btn:hover {
+      background: #27ae60;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <h2>Admin</h2>
+  <a href="#">Dashboard</a>
+  <a href="C:\Users\DELL\Desktop\E comrce\products.html">Products</a>
+  <a href="#">Orders</a>
+  <a href="#">Customers</a>
+</div>
+
+<div class="content">
+  <h1>Customers</h1>
+
+  <div class="card">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Orders</th>
+        <th>Action</th>
+      </tr>
+
+      <tr>
+        <td>Rahul Sharma</td>
+        <td>rahul@gmail.com</td>
+        <td>9876543210</td>
+        <td>5</td>
+        <td><button class="btn view-btn">View</button></td>
+      </tr>
+
+      <tr>
+        <td>Priya Patel</td>
+        <td>priya@gmail.com</td>
+        <td>9123456780</td>
+        <td>3</td>
+        <td><button class="btn view-btn">View</button></td>
+      </tr>
+
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

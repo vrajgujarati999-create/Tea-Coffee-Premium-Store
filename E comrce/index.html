@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tea & Coffee Premium Store</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">☕ Tea & Coffee</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="cart.html">Cart</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header>
+
+<section class="premium-banner">
+  <div class="banner-image"></div>
+  <div class="banner-content">
+    <h1>Tea <span>&</span> Coffee</h1>
+    <p>Start your day with the perfect cup of freshness.</p>
+    <div class="offer">50% OFF</div>
+    <a href="#" class="banner-btn">Shop Now</a>
+  </div>
+</section>
+
+<section class="featured">
+  <h2>Featured Products</h2>
+  <div class="products">
+    <div class="product-card">
+      <a href="product2.html">
+        <img src="https://marveltea.com/cdn/shop/files/masalatea.png?v=1724847755" alt="Masala Tea">
+      </a>
+      <h3>Masala Tea</h3>
+      <p class="price">₹250</p>
+     <button onclick="addToCart('Masala Tea',250,'https://marveltea.com/cdn/shop/files/masalatea.png?v=1724847755')">
+      Add To Cart
+     </button>
+    </div>
+
+    <div class="product-card">
+      <a href="product3.html">
+        <img src="https://cafedesireonline.com/cdn/shop/files/cappuccino_30779d25-6191-4ec6-8f29-140e1bb2e29f.jpg?v=1728367838&width=1445 " alt="Classic Coffee Powder">
+      </a>
+      <h3>Classic Coffee Powder</h3>
+      <p class="price">₹380</p>
+      <button onclick="addToCart('Classic Coffee Powder',380,'https://cafedesireonline.com/cdn/shop/files/cappuccino_30779d25-6191-4ec6-8f29-140e1bb2e29f.jpg?v=1728367838&width=1445' )">
+        Add To Cart
+      </button>
+    </div>
+
+    <div class="product-card">
+      <a href="product4.html">
+        <img src="https://i0.wp.com/vedicpharmacy.in/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-03-at-09.20.42_a27c4ae6.webp?fit=1080%2C1080&ssl=1" alt="Herbal Tea">
+      </a>
+      <h3>Herbal Tea</h3>
+      <p class="price">₹270</p>
+      <button onclick="addToCart('Herbal Tea',270,'https://i0.wp.com/vedicpharmacy.in/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-03-at-09.20.42_a27c4ae6.webp?fit=1080%2C1080&ssl=1')">
+        Add To Cart
+      </button>
+    </div>
+
+    <div class="product-card">
+      <a href="product5.html">
+        <img src="https://beansongcoffee.in/cdn/shop/files/1_a9e3ee9e-9153-401f-83a2-fd21eb8fcca1.jpg?v=1752562622" alt="Black Coffee">
+      </a>
+      <h3>Black Coffee</h3>
+      <p class="price">₹400</p>
+      <button onclick="addToCart('Black Coffee',400.,'https://beansongcoffee.in/cdn/shop/files/1_a9e3ee9e-9153-401f-83a2-fd21eb8fcca1.jpg?v=1752562622')">
+        Add To Cart
+      </button>
+    </div>
+
+    <div class="product-card">
+      <a href="product6.html">
+        <img src="https://www.staneswellness.com/cdn/shop/files/LemonTea5-Photoroom_800x.jpg?v=1724905108" alt="Lemon Tea">
+      </a>
+      <h3>Lemon Tea</h3>
+      <p class="price">₹220</p>
+      <button onclick="addToCart('Lemon Tea',220,'https://www.staneswellness.com/cdn/shop/files/LemonTea5-Photoroom_800x.jpg?v=1724905108')">
+        Add To Cart
+      </button>
+    </div>
+
+
+    
+ <div class="product-card">
+  <a href="product9.html">
+    <img src="https://sunbeamventures.in/cdn/shop/files/MlesnaMintgreentea60g6_Custom.jpg?v=1773923300&width=2000" alt="Mint Green Tea">
+  </a>
+  <h3>Mint Green Tea</h3>
+  <p class="price">₹280</p>
+  <button onclick="addToCart('Mint Green Tea', 280, 'https://sunbeamventures.in/cdn/shop/files/MlesnaMintgreentea60g6_Custom.jpg?v=1773923300&width=2000')">
+    Add To Cart
+  </button>
+</div>
+
+
+<div class="product-card">
+  <a href="product10.html">
+    <img src="https://loveofindia.com/cdn/shop/files/COFEEGRAPHICS13.jpg?v=1768903233 " alt="Instant Gold Coffee">
+  </a>
+  <h3>Instant Gold Coffee</h3>
+  <p class="price">₹320</p>
+  <button onclick="addToCart('Instant Gold Coffee', 320, 'https://www.zop.in/cdn/shop/files/50_c573931f-a787-4390-9ded-f3ec8ce4657a.png?v=1749037603')">
+    Add To Cart
+  </button>
+</div>
+
+<div class="product-card">
+  <a href="product10.html">
+    <img src="https://m.media-amazon.com/images/I/619ItkaKMsL._AC_UF894,1000_QL80_.jpg" alt="Dark Roast Signature Coffee">
+  </a>
+  <h3>Dark Roast Signature Coffee</h3>
+  <p class="price">₹350</p>
+  <button onclick="addToCart('Dark Roast Signature Coffee', 350, 'https://www.zop.in/cdn/shop/files/50_c573931f-a787-4390-9ded-f3ec8ce4657a.png?v=1749037603')">
+    Add To Cart
+  </button>
+</div>
+
+
+<div class="product-card">
+  <a href="product10.html">
+    <img src="https://m.media-amazon.com/images/I/817PJtcyYwL.jpg" alt="English Breakfast Tea">
+  </a>
+  <h3>English Breakfast Tea</h3>
+  <p class="price">₹350</p>
+  <button onclick="addToCart('English Breakfast Tea', 349, 'https://m.media-amazon.com/images/I/817PJtcyYwL.jpg')">
+    Add To Cart
+  </button>
+</div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Tea & Coffee Premium Store</p>
+</footer>
+
+<!-- tumhara pura page code upar hoga -->
+
+<script>
+function addToCart(name, price, image){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let found = cart.find(item => item.name === name);
+
+  if(found){
+    found.quantity += 1;
+  } else {
+    cart.push({
+      name: name,
+      price: price,
+      image: image,
+      quantity: 1
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Added to cart ✅");
+}
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
