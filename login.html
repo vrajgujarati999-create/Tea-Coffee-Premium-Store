@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #f3e6d5; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .container { background: #eee; padding: 30px; border-radius: 10px; width: 300px; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { margin-bottom: 20px; }
+    input { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #aaa; border-radius: 5px; }
+    button { width: 100%; padding: 10px; background-color: #7b4b2a; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background-color: #5e371f; }
+    .error { color: red; font-size: 12px; text-align: left; }
+    a { display: block; margin-top: 10px; color: #7b4b2a; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Login ☕</h2>
+
+  <form id="loginForm">
+    <input type="text" id="username" placeholder="Username">
+    <div class="error" id="userError"></div>
+
+    <input type="password" id="password" placeholder="Password">
+    <div class="error" id="passError"></div>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <a href="register.html">Create Account</a>
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let username = document.getElementById("username").value.trim();
+  let password = document.getElementById("password").value.trim();
+
+  let isValid = true;
+
+  document.getElementById("userError").innerText = "";
+  document.getElementById("passError").innerText = "";
+
+  if(username === "") { document.getElementById("userError").innerText = "Username is required"; isValid = false; }
+  if(password === "") { document.getElementById("passError").innerText = "Password is required"; isValid = false; }
+  else if(password.length < 6) { document.getElementById("passError").innerText = "Minimum 6 characters required"; isValid = false; }
+
+  if(isValid){
+    localStorage.setItem("username", username); // save user
+    window.location.href = "index.html"; // redirect to home
+  }
+});
+</script>
+
+</body>
+</html>
