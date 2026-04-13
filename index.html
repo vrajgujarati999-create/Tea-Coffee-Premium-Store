@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tea & Coffee Premium Store</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  
+<header>
+  <div class="logo">☕ Tea & Coffee</div>
+ <nav>
+  <a href="index.html">Home</a>
+  <a href="cart.html">Cart</a>
+  <a href="login.html" id="loginLink">Login</a>
+
+  <span id="welcomeUser" class="welcome"></span>
+  <button id="logoutBtn" style="display:none;">Logout</button>
+    <!-- ✅ Dark mode button -->
+<button id="themeToggle">🌗 Mode</button>
+</nav>
+
+</header>
+
+<section class="premium-banner">
+  <div class="banner-image"></div>
+  <div class="banner-content">
+    <h1>Tea <span>&</span> Coffee</h1>
+    <p>Start your day with the perfect cup of freshness.</p>
+    <div class="offer">50% OFF</div>
+    <a href="login.html" class="banner-btn">Shop Now</a>
+  </div>
+</section>
+
+<section class="featured">
+  <h2>Featured Products</h2>
+  <div class="products">
+    <div class="product-card">
+      <a href="product2.html">
+        <img src="https://marveltea.com/cdn/shop/files/masalatea.png?v=1724847755" alt="Masala Tea">
+      </a>
+      <h3>Masala Tea</h3>
+      <p class="price">₹250</p>
+       <p class="description">Specially sourced Robusta and Arabica beans for rich flavor.</p>
+        <p class="rating">⭐⭐ 2.0</p>
+     <button onclick="addToCart('Masala Tea',250,'https://marveltea.com/cdn/shop/files/masalatea.png?v=1724847755')">
+      Add To Cart
+     </button>
+   
+    </div>
+
+    <div class="product-card">
+      <a href="product3.html">
+        <img src="https://cafedesireonline.com/cdn/shop/files/cappuccino_30779d25-6191-4ec6-8f29-140e1bb2e29f.jpg?v=1728367838&width=1445 " alt="Classic Coffee Powder">
+      </a>
+      <h3>Classic Coffee Powder</h3>
+      <p class="price">₹380</p>
+      <p class="description">Rich and aromatic classic coffee powder for daily freshness.</p>
+        <p class="rating">⭐⭐⭐⭐ 4.0</p>
+      <button onclick="addToCart('Classic Coffee Powder',380,'https://cafedesireonline.com/cdn/shop/files/cappuccino_30779d25-6191-4ec6-8f29-140e1bb2e29f.jpg?v=1728367838&width=1445' )">
+        Add To Cart
+      </button>
+    </div>
+
+    <div class="product-card">
+      <a href="product4.html">
+        <img src="https://i0.wp.com/vedicpharmacy.in/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-03-at-09.20.42_a27c4ae6.webp?fit=1080%2C1080&ssl=1" alt="Herbal Tea">
+      </a>
+      <h3>Herbal Tea</h3>
+      <p class="price">₹270</p>
+      <p class="description">Blend of natural herbs for a soothing and healthy experience.</p>
+        <p class="rating">⭐⭐⭐ 3.5</p>
+      <button onclick="addToCart('Herbal Tea',270,'https://i0.wp.com/vedicpharmacy.in/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-03-at-09.20.42_a27c4ae6.webp?fit=1080%2C1080&ssl=1')">
+        Add To Cart
+      </button>
+    </div>
+
+    <div class="product-card">
+      <a href="product5.html">
+        <img src="https://beansongcoffee.in/cdn/shop/files/1_a9e3ee9e-9153-401f-83a2-fd21eb8fcca1.jpg?v=1752562622" alt="Black Coffee">
+      </a>
+      <h3>Black Coffee</h3>
+      <p class="price">₹400</p>
+      <p class="description">Bold and robust black coffee for strong caffeine kick.</p>
+        <p class="rating">⭐⭐⭐⭐ 4.2</p>
+      <button onclick="addToCart('Black Coffee',400,'https://beansongcoffee.in/cdn/shop/files/1_a9e3ee9e-9153-401f-83a2-fd21eb8fcca1.jpg?v=1752562622')">
+        Add To Cart
+      </button>
+    </div>
+
+    <div class="product-card">
+      <a href="product6.html">
+        <img src="https://www.staneswellness.com/cdn/shop/files/LemonTea5-Photoroom_800x.jpg?v=1724905108" alt="Lemon Tea">
+      </a>
+      <h3>Lemon Tea</h3>
+      <p class="price">₹220</p>
+      <p class="description">Refreshing lemon-flavored tea with natural citrus zest.</p>
+        <p class="rating">⭐⭐⭐ 3.8</p>
+      <button onclick="addToCart('Lemon Tea',220,'https://www.staneswellness.com/cdn/shop/files/LemonTea5-Photoroom_800x.jpg?v=1724905108')">
+        Add To Cart
+      </button>
+    </div>
+
+ <div class="product-card">
+  <a href="product9.html">
+    <img src="https://sunbeamventures.in/cdn/shop/files/MlesnaMintgreentea60g6_Custom.jpg?v=1773923300&width=2000" alt="Mint Green Tea">
+  </a>
+  <h3>Mint Green Tea</h3>
+  <p class="price">₹280</p>
+  <p class="description">Invigorating green tea blended with fresh mint leaves.</p>
+        <p class="rating">⭐⭐⭐⭐ 4.1</p>
+  <button onclick="addToCart('Mint Green Tea', 280, 'https://sunbeamventures.in/cdn/shop/files/MlesnaMintgreentea60g6_Custom.jpg?v=1773923300&width=2000')">
+    Add To Cart
+  </button>
+</div>
+
+
+<div class="product-card">
+  <a href="product10.html">
+    <img src="https://loveofindia.com/cdn/shop/files/COFEEGRAPHICS13.jpg?v=1768903233 " alt="Instant Gold Coffee">
+  </a>
+  <h3>Instant Gold Coffee</h3>
+  <p class="price">₹320</p>
+  <p class="description">Premium instant coffee with smooth and rich taste .</p>
+        <p class="rating">⭐⭐⭐⭐ 4.0</p>
+  <button onclick="addToCart('Instant Gold Coffee', 320, 'https://www.zop.in/cdn/shop/files/50_c573931f-a787-4390-9ded-f3ec8ce4657a.png?v=1749037603')">
+    Add To Cart
+  </button>
+</div>
+
+<div class="product-card">
+  <a href="product10.html">
+    <img src="https://m.media-amazon.com/images/I/619ItkaKMsL._AC_UF894,1000_QL80_.jpg" alt="Dark Roast Signature Coffee">
+  </a>
+  <h3>Dark Roast Signature Coffee</h3>
+  <p class="price">₹350</p>
+  <p class="description">Deep, dark roast with a strong signature flavor.</p>
+        <p class="rating">⭐⭐⭐⭐ 4.3</p>
+  <button onclick="addToCart('Dark Roast Signature Coffee', 350, 'https://www.zop.in/cdn/shop/files/50_c573931f-a787-4390-9ded-f3ec8ce4657a.png?v=1749037603')">
+    Add To Cart
+  </button>
+</div>
+
+
+<div class="product-card">
+  <a href="product10.html">
+    <img src="https://m.media-amazon.com/images/I/817PJtcyYwL.jpg" alt="English Breakfast Tea">
+  </a>
+  <h3>English Breakfast Tea</h3>
+  <p class="price">₹350</p>
+  <p class="description">Classic English Breakfast blend, bold and full-bodied.</p>
+        <p class="rating">⭐⭐⭐⭐ 4.0</p>
+  <button onclick="addToCart('English Breakfast Tea', 349, 'https://m.media-amazon.com/images/I/817PJtcyYwL.jpg')">
+    Add To Cart
+  </button>
+</div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Tea & Coffee Premium Store</p>
+</footer>
+
+<!-- tumhara pura page code upar hoga -->
+
+<script>
+// ✅ CART
+function addToCart(name, price, image){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let found = cart.find(item => item.name === name);
+
+  if(found){ found.quantity++; }
+  else { cart.push({name, price, image, quantity:1}); }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Added to cart ✅");
+}
+
+// ✅ LOGIN USER SHOW (STYLISH)
+document.addEventListener("DOMContentLoaded", function () {
+
+  let user = localStorage.getItem("username");
+  let welcome = document.getElementById("welcomeUser");
+  let logout = document.getElementById("logoutBtn");
+
+  if (user) {
+    welcome.innerHTML = " Welcome, <b>" + user + "👋" + "</b>";
+    logout.style.display = "inline-block";
+  }
+
+  logout.onclick = function () {
+    localStorage.removeItem("username");
+    window.location.reload();
+  };
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  let user = localStorage.getItem("username");
+  let welcome = document.getElementById("welcomeUser");
+  let logout = document.getElementById("logoutBtn");
+  let loginLink = document.getElementById("loginLink");
+
+  if (user) {
+    welcome.innerHTML = " Welcome, <b>" + user +" 👋" + "</b>";
+
+    // ✅ Login hide
+    loginLink.style.display = "none";
+
+    // ✅ Logout show
+    logout.style.display = "inline-block";
+  }
+
+  logout.onclick = function () {
+    localStorage.removeItem("username");
+    window.location.reload();
+  };
+
+});
+
+  // Load saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+    toggleBtn.innerText = "☀️ Light";
+  }
+
+  toggleBtn.onclick = function () {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+      toggleBtn.innerText = "☀️ Light";
+    } else {
+      localStorage.setItem("theme", "light");
+      toggleBtn.innerText = "🌗 Dark";
+    }
+  };
+
+
+</script>
+<script src="js/theme.js"></script>
+</body>
+</html>

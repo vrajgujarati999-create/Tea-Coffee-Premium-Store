@@ -1,0 +1,913 @@
+/* =========================================
+   Google Fonts
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* =========================================
+   Base Resets & Variables
+========================================= */
+:root {
+  --primary-color: #c88b39; /* Premium Gold/Caramel */
+  --primary-hover: #b0782d;
+  --dark-espresso: #1a120b;
+  --text-dark: #2c1e16;
+  --bg-cream: #fbf9f6;
+  --white: #ffffff;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 15px 40px rgba(200, 139, 57, 0.15);
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+  font-family: 'Playfair Display', serif;
+}
+
+/* =========================================
+   Header & Navigation
+========================================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--dark-espresso);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+}
+
+nav {
+  display: flex;
+  gap: 2.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #e4dccc;
+  font-weight: 400;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  transition: var(--transition);
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-color);
+  transition: var(--transition);
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.welcome {
+  font-weight: bold;
+  color: #4e342e;
+}
+body.dark {
+  background: #121212;
+  color: white;
+}
+
+body.dark .product-card {
+  background: #1e1e1e;
+  color: white;
+}
+
+body.dark header {
+  background: #222;
+}
+/* Dark mode base */
+body.dark {
+  background: #121212;
+  color: #ffffff;
+}
+
+/* ALL TEXT FIX */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark p,
+body.dark span,
+body.dark a {
+  color: #ffffff !important;
+}
+
+/* Product card */
+body.dark .product-card {
+  background: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Header */
+body.dark header {
+  background: #222;
+}
+
+/* Buttons */
+body.dark button {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+/* Section background fix */
+body.dark .featured {
+  background: #0f0f0f;
+}
+
+/* Banner text strong visible */
+body.dark .banner-content h1,
+body.dark .banner-content p {
+  color: #ffffff;
+}
+
+/* Navbar links */
+body.dark nav a {
+  color: #ffffff;
+}
+
+/* Welcome text */
+body.dark .welcome {
+  color: #ffffff;
+}
+
+/* Buttons improve */
+body.dark .banner-btn {
+  border: 1px solid #f5a623;
+  color: #f5a623;
+}
+
+body.dark .banner-btn:hover {
+  background: #f5a623;
+  color: #000;
+}
+
+/* Logout Button Style */
+#logoutBtn {
+  display: none;
+  padding: 6px 14px;
+  background-color: #d84315;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+#logoutBtn {
+  background: linear-gradient(45deg, #ff7043, #d84315);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Hover effect */
+#logoutBtn:hover {
+  background-color: #bf360c;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+.welcome-user {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #d7a86e, #b88b55);
+  color: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  animation: fadeIn 0.8s ease-in-out;
+  text-transform: uppercase;
+}
+
+
+/* animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   Premium Hero Banner
+========================================= */
+.premium-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60vh;
+  background: linear-gradient(135deg, var(--dark-espresso) 0%, #3e2723 100%);
+  color: var(--white);
+  padding: 0 5%;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-content {
+  flex: 1;
+  max-width: 600px;
+  z-index: 2;
+  padding: 4rem 0;
+}
+
+.banner-content h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.banner-content h1 span {
+  color: var(--primary-color);
+  font-style: italic;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  color: #e4dccc;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.offer {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--dark-espresso);
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  box-shadow: 0 4px 15px rgba(200, 139, 57, 0.4);
+}
+
+.banner-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  transition: var(--transition);
+}
+
+.banner-btn:hover {
+  background: var(--primary-color);
+  color: var(--dark-espresso);
+}
+
+/* Add a beautiful ambient glow to the banner background */
+.premium-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(200,139,57,0.15) 0%, rgba(26,18,11,0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* =========================================
+   Featured Products Section
+========================================= */
+.featured {
+  padding: 5rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.featured h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--dark-espresso);
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+/* Elegant line under heading */
+.featured h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  margin: 1rem auto 0;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+/* =========================================
+   Product Cards
+========================================= */
+.product-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+  text-align: center;
+  border: 1px solid rgba(209, 22, 22, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.product-card:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(0, 0, 0, 0.911);
+}
+
+.product-card a {
+  display: block;
+  overflow: hidden;
+  height: 260px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.1);
+}
+
+.product-card h3 {
+  font-size: 1.4rem;
+  color: var(--dark-espresso);
+  margin: 1.5rem 1rem 0.5rem;
+}
+
+.product-card .price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.product-card button {
+  width: calc(100% - 3rem);
+  margin: auto 1.5rem 1.5rem;
+  padding: 1rem;
+  background: var(--dark-espresso);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.product-card button:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  box-shadow: 0 5px 15px rgba(200, 139, 57, 0.3);
+}
+
+/* =========================================
+   Footer
+========================================= */
+footer {
+  background: var(--dark-espresso);
+  color: #a39587;
+  text-align: center;
+  padding: 2rem 5%;
+  border-top: 2px solid #2a1d13;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   Responsive Design
+========================================= */
+@media (max-width: 900px) {
+  .banner-content h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1.5rem 5%;
+    gap: 1rem;
+  }
+  
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .premium-banner {
+    text-align: center;
+    padding: 4rem 5%;
+  }
+  
+  .banner-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .featured {
+    padding: 3rem 5%;
+  }
+}
+
+/*===Cart===*/
+
+/* =========================================
+   Cart Section Layout
+========================================= */
+.cart-section {
+  padding: 5rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 60vh;
+}
+
+.cart-section h2 {
+  font-size: 2.5rem;
+  color: var(--dark-espresso);
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.cart-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  margin: 1rem auto 0;
+}
+
+/* =========================================
+   Cart Table Styling
+========================================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 2rem;
+}
+
+thead {
+  background: var(--dark-espresso);
+  color: var(--white);
+}
+
+th {
+  padding: 1.5rem 1rem;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+td {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  vertical-align: middle;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Hover effect for table rows */
+tbody tr {
+  transition: background 0.3s ease;
+}
+
+tbody tr:hover {
+  background: rgba(200, 139, 57, 0.05); /* Slight gold tint */
+}
+
+/* =========================================
+   Cart Images & Inputs
+========================================= */
+.cart-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.qty-input {
+  width: 60px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: var(--dark-espresso);
+  background: var(--bg-cream);
+  outline: none;
+  transition: var(--transition);
+}
+
+.qty-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(200, 139, 57, 0.2);
+}
+
+/* =========================================
+   Cart Buttons
+========================================= */
+.remove-btn {
+  background: transparent;
+  color: #d32f2f; /* Premium subtle red */
+  border: 1px solid #d32f2f;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+  background: #d32f2f;
+  color: var(--white);
+  box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+}
+
+/* =========================================
+   Total and Checkout
+========================================= */
+#total {
+  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--dark-espresso);
+  text-align: right;
+  margin-bottom: 2rem;
+  padding-right: 1rem;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 0 0 auto;
+  text-align: center;
+  background: var(--primary-color);
+  color: var(--dark-espresso);
+  text-decoration: none;
+  padding: 1.2rem 2rem;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--dark-espresso);
+  color: var(--primary-color);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   Responsive Cart View for Mobile
+========================================= */
+@media (max-width: 768px) {
+  /* Force table to not behave like a table */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  /* Hide table headers (but not display: none; for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  tr {
+    border: 1px solid #eee;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    padding: 1rem;
+    background: var(--white);
+    box-shadow: var(--shadow-soft);
+  }
+  
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  td::before {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #888;
+    text-transform: uppercase;
+  }
+  
+  /* Label the data */
+  td:nth-of-type(1)::before { content: "Product Image"; }
+  td:nth-of-type(2)::before { content: "Name"; }
+  td:nth-of-type(3)::before { content: "Price"; }
+  td:nth-of-type(4)::before { content: "Quantity"; }
+  td:nth-of-type(5)::before { content: "Total"; }
+  td:nth-of-type(6)::before { content: "Action"; }
+  
+  /* Fix image positioning on mobile */
+  td:nth-of-type(1) {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .cart-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .btn {
+    margin: 0 auto;
+  }
+  
+  #total {
+    text-align: center;
+  }
+}
+
+
+/*=== product ===*/
+
+/* Import Google Fonts for modern typography */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #fdfbf7; /* Soft warm background */
+  color: #3e2723; /* Dark espresso text */
+  line-height: 1.6;
+}
+
+/* =========================================
+   Header & Navigation (Glassmorphism)
+========================================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5%;
+  background: rgba(253, 251, 247, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #4e342e;
+  letter-spacing: -0.5px;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #5d4037;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #d84315; /* Warm caramel accent */
+}
+
+/* Animated underline on hover */
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #d84315;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================
+   Products Section Layout
+========================================= */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  padding: 4rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   Product Cards
+========================================= */
+/* Target both class names you used */
+.product, .product-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  /* Bouncy hover transition */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.product:hover, .product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(93, 64, 55, 0.12);
+}
+
+/* Images inside cards */
+.product > img, .product-card img, .product-card a {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  display: block; /* Removes bottom spacing limit */
+}
+
+.product img, .product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Subtle image zoom on card hover */
+.product:hover img, .product-card:hover img {
+  transform: scale(1.08); 
+}
+
+/* Card Content Details */
+.product h3, .product-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 1.5rem 1.5rem 0.5rem;
+  color: #3e2723;
+}
+
+.product p, .product-card .price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #d84315; /* Accent color for price */
+  margin: 0 1.5rem 1.5rem;
+}
+
+/* =========================================
+   Add to Cart Button
+========================================= */
+.product button, .product-card button {
+  background: linear-gradient(135deg, #d84315, #bf360c);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  margin: auto 1.5rem 1.5rem; /* Pushes button to the bottom */
+  border-radius: 12px;
+  outline: none;
+}
+
+.product button:hover, .product-card button:hover {
+  background: linear-gradient(135deg, #bf360c, #9f0000);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(216, 67, 21, 0.3);
+}
+
+.product button:active, .product-card button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* =========================================
+   Responsive tablet / mobile view
+========================================= */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  
+  nav {
+    gap: 1.5rem;
+  }
+  
+  .products {
+    padding: 2.5rem 5%;
+    gap: 2rem;
+  }
+}
+
+
+

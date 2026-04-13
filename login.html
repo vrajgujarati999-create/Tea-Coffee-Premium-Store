@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Login Page</title>
+  
   <style>
     body { margin: 0; font-family: Arial, sans-serif; background-color: #f3e6d5; display: flex; justify-content: center; align-items: center; height: 100vh; }
     .container { background: #eee; padding: 30px; border-radius: 10px; width: 300px; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
@@ -12,6 +13,43 @@
     button:hover { background-color: #5e371f; }
     .error { color: red; font-size: 12px; text-align: left; }
     a { display: block; margin-top: 10px; color: #7b4b2a; text-decoration: none; }
+    body.dark {
+  background-color: #121212 !important;
+  color: #fff !important;
+}
+
+/* login box */
+body.dark .container {
+  background: #1e1e1e !important;
+  color: #fff !important;
+  box-shadow: 0 0 12px rgba(0,0,0,0.6);
+}
+
+/* inputs */
+body.dark input {
+  background: #2a2a2a !important;
+  color: #fff !important;
+  border: 1px solid #444 !important;
+}
+
+/* button */
+body.dark button {
+  background-color: #7b4b2a !important;
+}
+
+body.dark button:hover {
+  background-color: #5e371f !important;
+}
+
+/* text links */
+body.dark a {
+  color: #f0c27b !important;
+}
+
+/* error text */
+body.dark .error {
+  color: #ff6b6b !important;
+}
   </style>
 </head>
 <body>
@@ -54,6 +92,6 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
   }
 });
 </script>
-
+<script src="js/theme.js"></script>
 </body>
 </html>

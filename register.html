@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register - Coffee Shop</title>
+<style>
+body { font-family: Arial; display:flex; justify-content:center; align-items:center; height:100vh; background:#f3e6d5; }
+.box { background:white; padding:30px; border-radius:10px; width:300px; text-align:center; }
+input { width:100%; padding:10px; margin:10px 0; }
+button { width:100%; padding:10px; background:#6b3e26; color:white; border:none; cursor:pointer; }
+button:hover { background:#4b2a1a; }
+a { color:#6b3e26; text-decoration:none; cursor:pointer; }
+body.dark {
+  background: #121212 !important;
+  color: #fff !important;
+}
+
+/* register box */
+body.dark .box {
+  background: #1e1e1e !important;
+  color: #fff !important;
+  box-shadow: 0 0 12px rgba(0,0,0,0.6);
+}
+
+/* inputs */
+body.dark input {
+  background: #2a2a2a !important;
+  color: #fff !important;
+  border: 1px solid #444 !important;
+}
+
+/* button */
+body.dark button {
+  background: #6b3e26 !important;
+}
+
+body.dark button:hover {
+  background: #4b2a1a !important;
+}
+
+/* link */
+body.dark a {
+  color: #f0c27b !important;
+}   
+</style>
+</head>
+<body>
+
+<div class="box">
+<h2>Create Account ☕</h2>
+
+<input type="text" id="newUser" placeholder="Username">
+<input type="password" id="newPass" placeholder="Password">
+<button onclick="register()">Register</button>
+
+<p><a href="login.html">Back to Login</a></p>
+</div>
+
+<script>
+function register() {
+    let user = document.getElementById("newUser").value.trim();
+    let pass = document.getElementById("newPass").value.trim();
+
+    if(user === "" || pass === "") { alert("Please fill all fields"); return; }
+
+    localStorage.setItem("username", user);
+    localStorage.setItem("password", pass);
+
+    alert("Account Created ✅");
+    window.location.href = "login.html";
+}
+</script>
+<script src="js/theme.js"></script>
+</body>
+</html>
